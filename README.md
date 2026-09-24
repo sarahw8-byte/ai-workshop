@@ -21,3 +21,7 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Deployment
+
+Deployed to Vercel from the `main` branch.
