@@ -3,7 +3,7 @@ Last updated: 2026-10-14
 
 ## Works
 - Live Next.js site deployed on Vercel at ai-workshop-gamma-three.vercel.app. Vercel publishes the main branch.
-- Slice 1, sign up and log in (pull request #4, merged 2026-10-14). Sarah tested done-criteria (a) to (d) on the Vercel preview against the real Supabase project; all passed.
+- Slice 1, sign up and log in (pull request #4, merged 2026-10-14). Sarah tested done-criteria (a) to (d) on the Vercel preview against the real Supabase project; all passed. Logging in as test1@example.com on the live site also works.
 - Sign-in talks to Supabase Auth with plain fetch in app/auth.ts. No Supabase library is installed.
 
 ## Broken or flaky
@@ -11,7 +11,7 @@ Last updated: 2026-10-14
 
 ## Environment notes
 - Next.js 16.3.5, React 19.3.0, TypeScript 5.9.3.
-- Vercel environment variables NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY exist for Production. For previews they are set only for the branch claude/bold-galileo-28m13k (Vercel's edit screen did not offer a general Preview option). New branches' previews will show "The site is missing its Supabase settings." until this is fixed.
+- Vercel environment variables NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY are set for Production (re-added 2026-10-14; the live site signs in). Choosing "Select a Custom Preview Branch" in Vercel's edit screen moved a variable off Production instead of adding Preview, so avoid it. Vercel's edit screen did not offer a general Preview option, so new branches' previews will show "The site is missing its Supabase settings." until both variables are made available to Preview.
 - GitHub's default branch is claude/sarah-wong-personal-site-qf2h6k, a leftover from the personal site. It should be main. Sarah changes this in GitHub settings.
 - package.json scripts: dev, build, start. There is no lint or test script.
 - The name in package.json is still "sarah-wong-personal-site". Harmless; rename only if Sarah asks.
