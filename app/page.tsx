@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { AuthError, Session, loadSession, logIn, logOut, signUp } from "./auth";
+import TaskList from "./task-list";
 
 type Mode = "login" | "signup";
 
@@ -79,12 +80,15 @@ export default function Home() {
       {checking ? (
         <p className="muted">Loading…</p>
       ) : session ? (
-        <section className="card">
-          <p>Signed in as {session.email}</p>
-          <button type="button" onClick={handleLogOut}>
-            Log out
-          </button>
-        </section>
+        <>
+          <section className="card">
+            <p>Signed in as {session.email}</p>
+            <button type="button" onClick={handleLogOut}>
+              Log out
+            </button>
+          </section>
+          <TaskList key={session.email} />
+        </>
       ) : (
         <section className="card">
           <div className="mode-buttons">
